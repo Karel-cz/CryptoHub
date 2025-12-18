@@ -1,8 +1,12 @@
+//@@viewOn:imports
 import { createContext, useEffect, useState, useCallback, useMemo } from "react";
+//@@viewOff:imports
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const CoinContext = createContext();
 
 export const CoinContextProvider = (props) => {
+  //@@viewOn:private
   const [allCoin, setAllCoin] = useState([]);
   const [currency, setCurrency] = useState({
     name: "usd",
@@ -53,9 +57,13 @@ export const CoinContextProvider = (props) => {
     currency,
     setCurrency,
   }), [allCoin, currency]);
+  //@@viewOff:private
+
+  //@@viewOn:render
   return (
     <CoinContext.Provider value={contextValue}>
       {props.children}
     </CoinContext.Provider>
   );
+  //@@viewOff:render
 };

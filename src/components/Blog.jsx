@@ -1,8 +1,9 @@
+//@@viewOn:imports
 import "./Blog.css";
-
 import { useNavigate } from "react-router-dom";
+//@@viewOff:imports
 
-
+//@@viewOn:helpers
 const blogPosts = [
   {
     title: "What is Cryptocurrency?",
@@ -33,8 +34,10 @@ const blogPosts = [
     content: `- Use strong, unique passwords and enable 2FA. - Never share your private keys. - Be cautious of scams and phishing attempts. - Only use trusted wallets and exchanges.`,
   },
 ];
+//@@viewOff:helpers
 
 export default function Blog() {
+  //@@viewOn:render
 
   const navigate = useNavigate();
 
@@ -46,7 +49,7 @@ export default function Blog() {
       </p>
       <div className="blog-list">
         {blogPosts.map((post, idx) => (
-          <div data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"} className="blog-card" 
+          <div data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"} className="blog-card"
           key={idx}
           onClick={() => navigate(`/blog/${idx}`)}
           style={{ cursor: "pointer" }}
@@ -60,4 +63,5 @@ export default function Blog() {
       </div>
     </div>
   );
+  //@@viewOff:render
 }

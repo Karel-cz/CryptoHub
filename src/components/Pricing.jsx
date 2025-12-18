@@ -1,4 +1,8 @@
+//@@viewOn:imports
 import "./Pricing.css";
+import { PAGE_TEXT } from "../constants/pages";
+import { BUTTONS } from "../constants/buttons";
+//@@viewOff:imports
 
 export default function Pricing() {
       const plans = [
@@ -47,6 +51,11 @@ export default function Pricing() {
   },
 ];
 
+export default function Pricing() {
+  //@@viewOn:private
+  //@@viewOff:private
+
+  //@@viewOn:render
   return (
     <div className="pricing-page">
       <div data-aos="fade-in" className="pricing-title">Pricing Plans</div>
@@ -79,4 +88,5 @@ export default function Pricing() {
       </div>
     </div>
   );
+  //@@viewOff:render
 }
